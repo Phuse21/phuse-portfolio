@@ -2,7 +2,16 @@
 
 import { FaHtml5, FaCss3, FaJs, FaPhp, FaReact, FaFigma } from "react-icons/fa";
 
-import { SiTailwindcss, SiLaravel, SiNextdotjs } from "react-icons/si";
+import {
+  SiTailwindcss,
+  SiLaravel,
+  SiNextdotjs,
+  SiBootstrap,
+  SiDocker,
+  SiMysql,
+  SiGithub,
+  SiTypescript,
+} from "react-icons/si";
 
 import { motion } from "framer-motion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -146,6 +155,26 @@ const skills = {
     {
       name: "Figma",
       icon: <FaFigma />,
+    },
+    {
+      name: "TypeScript",
+      icon: <SiTypescript />,
+    },
+    {
+      name: "Bootstrap",
+      icon: <SiBootstrap />,
+    },
+    {
+      name: "Docker",
+      icon: <SiDocker />,
+    },
+    {
+      name: "MySQL",
+      icon: <SiMysql />,
+    },
+    {
+      name: "GitHub",
+      icon: <SiGithub />,
     },
   ],
 };
