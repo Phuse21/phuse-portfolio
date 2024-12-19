@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/tooltip";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import React, { useState } from "react";
+import { useState } from "react";
 import { BsArrowUpRight, BsGithub } from "react-icons/bs";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
