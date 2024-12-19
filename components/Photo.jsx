@@ -19,7 +19,7 @@ const Photo = () => {
             opacity: 1,
             transition: { duration: 0.4, delay: 2.4, ease: "easeInOut" },
           }}
-          className="w-[298px] h-[298px] xl:w-[498px] xl:h-[498px] mix-blend-lighten absolute"
+          className="w-[298px] h-[298px] xl:w-[498px] xl:h-[498px] dark:mix-blend-lighten mix-blend-normal absolute left-1"
         >
           <Image
             src="/assets/photo.png"
@@ -42,7 +42,7 @@ const Photo = () => {
             cx="253"
             cy="253"
             r="250"
-            stroke="#00ff99"
+            stroke="#008080"
             strokeWidth="4"
             strokeLinecap="round"
             strokeLinejoin="round"

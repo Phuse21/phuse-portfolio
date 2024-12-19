@@ -11,7 +11,7 @@ const Home = () => {
         <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24">
           {/* Text */}
           <div className="text-center xl:text-left order-2 xl:order-none">
-            <span className="text-xl">FullStack Software Developer</span>
+            <span className="text-xl">Software Developer</span>
             <h1 className="h1 mb-6">
               Hello I'm <br />
               <span className="text-accent">Mahfuz Abdallah</span>
@@ -28,7 +28,7 @@ const Home = () => {
               <Button
                 variant="outline"
                 size="lg"
-                className="upperCase flex items-center gap-2"
+                className="upperCase flex items-center gap-2 hover:text-[#ffffff]"
               >
                 <span>Download Cv</span>
                 <FiDownload className="text-xl" />
@@ -37,7 +37,7 @@ const Home = () => {
               <div className="mb-8 xl:mb-0">
                 <Social
                   containerStyles="flex gap-6"
-                  iconStyles="w-9 h-9 border border-accent rounded-full flex items-center justify-center text-accent text-base hover:bg-accent hover:text-primary transition-all duration-500"
+                  iconStyles="w-9 h-9 border border-accent rounded-full flex items-center justify-center text-accent text-base hover:bg-accent hover:text-[#ffffff] transition-all duration-500"
                 />
               </div>
             </div>

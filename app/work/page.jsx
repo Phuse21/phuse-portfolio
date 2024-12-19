@@ -84,8 +84,13 @@ const Work = () => {
 
               <h2 className="text-[42px] leading-none font-bold text-white group:hover:text-accent transition-all duration-500 capitalize">
                 {/* project category */}
-                {project.category} Project
+                {project.title}
               </h2>
+
+              <h3 className="text-[22px] leading-none font-semibold text-white/80 group:hover:text-accent transition-all duration-500 capitalize">
+                {/* project category */}
+                {project.category} Project
+              </h3>
 
               <p className="text-white/60">
                 {/* project description */}

@@ -36,10 +36,18 @@ const tailwindConfig = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       colors: {
-        primary: "#1c1c22",
+        primary: {
+          light: "#fbfcf8",
+          dark: "#1c1c22",
+        },
+        white: {
+          light: "#1c1c22",
+          dark: "#ffffff",
+        },
+
         accent: {
-          DEFAULT: "#00ff99",
-          hover: "#00e187",
+          DEFAULT: "#008080", //#00bfff 008080 00ffff
+          hover: "#00cccc",
         },
       },
       borderRadius: {
