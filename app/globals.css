@@ -28,9 +28,13 @@
   }
 
   .text-outline {
-    -webkit-text-stroke: 1px #ffffff;
+    -webkit-text-stroke: 1px #1c1c22; /* Dark outline */
   }
+  .dark .text-outline {
+    -webkit-text-stroke: 1px #ffffff; /* White outline in dark mode */
+  }
+
   .text-outline-hover {
-    -webkit-text-stroke: 1px #00ff99;
+    -webkit-text-stroke: 1px #008080;
   }
 }

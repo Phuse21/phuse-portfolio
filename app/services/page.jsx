@@ -66,7 +66,7 @@ const Services = () => {
                 <p>{service.description}</p>
 
                 {/* border */}
-                <div className="border-b border-white/20 w-full"></div>
+                <div className="border-b border-[#1c1c22] dark:border-[#ffffff]/80 w-full"></div>
               </div>
             );
           })}
