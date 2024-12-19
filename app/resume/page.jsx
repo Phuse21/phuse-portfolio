@@ -219,9 +219,11 @@ const Resume = () => {
                       return (
                         <li
                           key={index}
-                          className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
+                          className="dark:bg-[#232329] bg-[#27272c]/15 h-[194px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-4"
                         >
-                          <span className="text-accent">{item.date}</span>
+                          <span className="font-bold text-accent">
+                            {item.date}
+                          </span>
                           <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
                             {item.degree}
                           </h3>
@@ -252,10 +254,12 @@ const Resume = () => {
                       return (
                         <li
                           key={index}
-                          className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
+                          className="bg-[#232329]/10 dark:bg-[#27272c] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-2"
                         >
-                          <span className="text-accent">{item.date}</span>
-                          <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
+                          <span className="font-bold text-accent">
+                            {item.date}
+                          </span>
+                          <h3 className="font-bold text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
                             {item.title}
                           </h3>
 
@@ -287,7 +291,7 @@ const Resume = () => {
                           <li key={index}>
                             <TooltipProvider delayDuration={100}>
                               <Tooltip>
-                                <TooltipTrigger className="w-full h-[150px] bg-[#232329] rounded-xl flex justify-center items-center group">
+                                <TooltipTrigger className="w-full h-[150px] bg-[#232329]/10 dark:bg-[#27272c] rounded-xl flex justify-center items-center group">
                                   <div className="text-6xl group-hover:text-accent transition-all duration-300">
                                     {skill.icon}
                                   </div>
