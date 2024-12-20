@@ -18,38 +18,57 @@ import WorkSliderBtns from "@/components/WorkSliderBtns";
 const projects = [
   {
     num: "01",
-    category: "Frontend",
-    title: "project 1",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, quae ",
-    stack: [{ name: "HTML" }, { name: "CSS" }, { name: "JavaScript" }],
-    image: "/assets/work/thumb1.png",
-    live: "",
-    github: "",
-  },
-  {
-    num: "02",
     category: "Fullstack",
-    title: "project 2",
+    title: "Solestride",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, quae ",
+      "Solestride is job a platform where employers can post job opportunities, and the general public can search and apply for jobs seamlessly, connecting talent with opportunities.",
     stack: [
       { name: "Laravel" },
       { name: "Tailwind.css" },
       { name: "Livewire" },
+      { name: "Alpine.js" },
+      { name: "MySQL" },
     ],
-    image: "/assets/work/thumb2.png",
+    image: "/assets/mockup/solestride.png",
     live: "",
-    github: "",
+    github: "https://github.com/Phuse21/SoleStride",
+  },
+  {
+    num: "02",
+    category: "Fullstack",
+    title: "Care Pulse",
+    description:
+      "Care Pulse is a hospital appointment booking platform designed to streamline scheduling for patients and doctors, ensuring a seamless and efficient healthcare experience.",
+    stack: [
+      { name: "Next.js" },
+      { name: "Laravel" },
+      { name: "Tailwind.css" },
+      { name: "MySQL" },
+    ],
+    image: "/assets/mockup/carepulse.png",
+    live: "",
+    github: "https://github.com/Phuse21/CarePulse",
   },
   {
     num: "03",
-    category: "Fullstack",
-    title: "project 3",
+    category: "Backend",
+    title: "Robocall App",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, quae ",
-    stack: [{ name: "Next.js" }, { name: "Tailwind.css" }, { name: "Laravel" }],
-    image: "/assets/work/thumb3.png",
+      "A robust robocall application built with Arkesel, enabling automated voice calls for efficient communication and notifications. Ideal for businesses and organizations looking to streamline outreach.",
+    stack: [{ name: "Laravel" }, { name: "API" }],
+    image: "/assets/mockup/robocall.png",
+    live: "",
+    github: "https://github.com/Phuse21/RobocallsApp",
+  },
+
+  {
+    num: "04",
+    category: "UI/UX",
+    title: "EMR UI/UX",
+    description:
+      "A thoughtfully designed user interface and experience for an EMR system, focusing on intuitive navigation, streamlined workflows, and enhanced usability for healthcare professionals.",
+    stack: [{ name: "Figma" }],
+    image: "/assets/mockup/emr.png",
     live: "",
     github: "",
   },
