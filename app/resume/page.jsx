@@ -27,7 +27,7 @@ import {
 const about = {
   title: "About Me",
   description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, quae ",
+    "Hey, everyone loves a little backstory, right? Feel free to reach out; I'm sure we can do something fun together. I don't bite (much)!",
   info: [
     {
       fieldName: "Name",
@@ -61,7 +61,7 @@ const experience = {
   icon: "/assets/resume/badge.svg",
   title: "Professional Experience",
   description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, quae ",
+    "A showcase of my journey, highlighting key roles and accomplishments that reflect my growth and contributions in the professional world.",
 
   items: [
     {
@@ -69,15 +69,15 @@ const experience = {
       title: "Junior Developer",
       date: "October 2023 - October 2024",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, quae ",
+        "Contributed to the development and maintenance of healthcare software solutions, collaborating with cross-functional teams to improve user experiences and streamline workflows.",
     },
 
     {
-      company: "Private Contractor",
+      company: "Private Contract",
       title: "Robocall Developer",
       date: "December 2024",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, quae ",
+        "Designed and implemented automated robocall solutions, utilizing Arkesel to enhance communication systems.",
     },
 
     {
@@ -85,7 +85,7 @@ const experience = {
       title: "Tech Support (Intern)",
       date: "October 2023 - December 2024",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, quae ",
+        "Provided technical support to end-users, and assisting with system maintenance to ensure smooth operations.",
     },
   ],
 };
@@ -95,8 +95,7 @@ const education = {
   icon: "/assets/resume/cap.svg",
   title: "Education",
   description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, quae ",
-
+    "A summary of my educational background, showcasing the knowledge and skills I’ve gained throughout my academic journey.",
   items: [
     {
       institution: "University of Ghana",
@@ -116,8 +115,7 @@ const education = {
 const skills = {
   title: "Skills",
   description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, quae ",
-
+    "A collection of the key skills and tools I’ve gained experience with, helping me build and deliver efficient, scalable, and user-friendly solutions.",
   skillsList: [
     {
       name: "Laravel",
@@ -249,23 +247,28 @@ const Resume = () => {
                 </p>
 
                 <ScrollArea className="h-[400px]">
-                  <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
+                  <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px] py-4 pl-2 pr-4">
                     {experience.items.map((item, index) => {
                       return (
                         <li
                           key={index}
-                          className="bg-[#232329]/10 dark:bg-[#27272c] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-2"
+                          className="bg-[#232329]/10 dark:bg-[#27272c] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center hover:outline-offset-1 hover:outline hover:outline-accent items-center lg:items-start gap-2 relative group overflow-hidden"
                         >
-                          <span className="font-bold text-accent">
+                          <span className="font-bold text-accent transition-opacity opacity-100 group-hover:opacity-0">
                             {item.date}
                           </span>
-                          <h3 className="font-bold text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
+                          <h3 className="font-bold text-xl max-w-[260px] min-h-[60px] text-center lg:text-left transition-opacity opacity-100 group-hover:opacity-0">
                             {item.title}
                           </h3>
 
-                          <div className="flex items-center gap-3">
+                          <div className="flex items-center gap-3 transition-opacity opacity-100 group-hover:opacity-0">
                             <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
                             <p className="text-white/60">{item.company}</p>
+                          </div>
+
+                          {/* Centered description */}
+                          <div className="absolute w-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-4 bg-[#232329] rounded-xl text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <p>{item.description}</p>
                           </div>
                         </li>
                       );
