@@ -9,21 +9,21 @@ const services = [
     num: "01",
     title: "Web Development",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, quae.",
+      "I design and develop websites, creating responsive and user-friendly experiences that are optimized for performance and accessibility.",
     path: "",
   },
   {
     num: "02",
     title: "UI/UX Design",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, quae.",
+      "I focus on creating seamless and intuitive user interfaces with a strong emphasis on user experience, ensuring designs are both functional and aesthetically pleasing.",
     path: "",
   },
   {
     num: "03",
     title: "Robocall Development",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, quae.",
+      "I develop automated robocall systems, integrating innovative solutions like voice messaging and text-to-speech to improve communication and engagement for businesses.",
     path: "",
   },
 ];
