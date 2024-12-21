@@ -197,10 +197,10 @@ const Work = () => {
               })}
 
               {/* slider buttons */}
-              <div className="relative h-[30px] xl:h-[60px]">
+              <div className="relative h-[40px] xl:h-[60px]">
                 <WorkSliderBtns
                   containerStyles="absolute right-0 bottom-0 z-20 w-full justify-between xl:w-max xl:justify-none flex gap-2"
-                  btnStyles="bg-accent hover:bg-accent-hover text-primary xl:text-[22px] text-[16px] xl:w-[44px] xl:h-[44px] w-[22px] h-[22px] flex justify-center items-center transition-all"
+                  btnStyles="bg-accent hover:bg-accent-hover text-primary xl:text-[22px] text-[20px] xl:w-[44px] xl:h-[44px] w-[32px] h-[32px] flex justify-center items-center transition-all"
                 />
               </div>
             </Swiper>
