@@ -124,8 +124,7 @@ const ContactForm = () => {
           fieldType={FormFieldType.SELECT}
           control={form.control}
           name="service"
-          placeholder="Select a service (optional)"
-          className="placeholder:text-sm"
+          placeholder="Select service(optional)"
         >
           <SelectItem value="web">Web Development</SelectItem>
           <SelectItem value="ui/ux">UI/UX Design</SelectItem>
