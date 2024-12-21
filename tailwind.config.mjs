@@ -37,7 +37,7 @@ const tailwindConfig = {
       },
       colors: {
         primary: {
-          light: "#fbfcf8",
+          light: "#fbf5df",
           dark: "#1c1c22",
         },
         white: {

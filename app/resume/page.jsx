@@ -267,7 +267,7 @@ const Resume = () => {
                           </div>
 
                           {/* Centered description */}
-                          <div className="absolute w-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-4 bg-[#232329] rounded-xl text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          <div className="absolute w-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-4 bg-[#232329]/10 dark:bg-[#27272c] h-full rounded-xl text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                             <p>{item.description}</p>
                           </div>
                         </li>

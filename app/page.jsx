@@ -2,6 +2,7 @@ import Photo from "@/components/Photo";
 import Social from "@/components/Social";
 import Stats from "@/components/Stats";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import { FiDownload } from "react-icons/fi";
 
 const Home = () => {
@@ -18,9 +19,9 @@ const Home = () => {
             </h1>
 
             <p className="max-w-[500px] mb-9 text-white/80">
-              I excel at crafting elegant digital experiences and I am
-              proficient in various programming languages, frameworks, and
-              tools.
+              I'm all about building smooth, user-friendly experiences, and I'm
+              pretty comfortable working with a range of programming languages,
+              frameworks, and tools to make it happen.
             </p>
 
             {/* button and socials */}
@@ -30,8 +31,16 @@ const Home = () => {
                 size="lg"
                 className="upperCase flex items-center gap-2 hover:text-[#ffffff]"
               >
-                <span>Download Cv</span>
-                <FiDownload className="text-xl" />
+                <Link
+                  href="/assets/Resume1.pdf"
+                  passHref
+                  download
+                  target="_blank"
+                  className="flex items-center gap-2"
+                >
+                  <span>Download Cv</span>
+                  <FiDownload className="text-xl" />
+                </Link>
               </Button>
 
               <div className="mb-8 xl:mb-0">
