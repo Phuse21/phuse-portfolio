@@ -37,4 +37,8 @@
   .text-outline-hover {
     -webkit-text-stroke: 1px #008080;
   }
+
+  .shad-error {
+    @apply text-red-400 text-xs !important;
+  }
 }
