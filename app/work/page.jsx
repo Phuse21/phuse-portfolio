@@ -68,7 +68,7 @@ const projects = [
     description:
       "A thoughtfully designed user interface and experience for an EMR system, focusing on intuitive navigation, streamlined workflows, and enhanced usability for healthcare professionals.",
     stack: [{ name: "Figma" }],
-    image: "/assets/mockup/solestride.png",
+    image: "/assets/mockup/Emr2.png",
     live: "",
     github: "",
   },
