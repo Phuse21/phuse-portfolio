@@ -1,4 +1,3 @@
-// app/api/contact/route.js
 import nodemailer from "nodemailer";
 
 export async function POST(req) {
@@ -15,16 +14,16 @@ export async function POST(req) {
 
   try {
     const transporter = nodemailer.createTransport({
-      service: "Gmail", // Or use another email service
+      service: "Gmail",
       auth: {
-        user: process.env.EMAIL_USER, // Your email
-        pass: process.env.EMAIL_PASS, // Your email password or app-specific password
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
       },
     });
 
     const mailOptions = {
       from: email,
-      to: "abdaallahm4511@gmail.com", // The recipient email
+      to: process.env.EMAIL_USER,
       subject: `Portfolio Contact from ${firstName} ${lastName}`,
       text: `Name: ${firstName} ${lastName}\nEmail: ${email}\nPhone: ${phone}\nService: ${
         service || "N/A"
