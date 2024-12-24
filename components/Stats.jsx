@@ -12,12 +12,13 @@ const stats = [
     text: "Projects",
   },
   {
-    num: 3,
+    num: 5,
     text: "Technologies Mastered",
   },
   {
-    num: 500,
+    num: 400,
     text: "Code Commits",
+    isApproximate: true,
   },
 ];
 
@@ -32,12 +33,19 @@ const Stats = () => {
                 className="flex flex-1 gap-4 items-center justify-center xl:justify-start"
                 key={index}
               >
-                <CountUp
-                  end={stat.num}
-                  duration={5}
-                  delay={2}
-                  className="text-4xl xl:text-6xl font-extrabold"
-                />
+                <div>
+                  <CountUp
+                    end={stat.num}
+                    duration={5}
+                    delay={2}
+                    className="text-4xl xl:text-6xl font-extrabold"
+                  />
+                  {stat.isApproximate && (
+                    <span className="text-4xl xl:text-6xl font-extrabold">
+                      +
+                    </span>
+                  )}
+                </div>
                 <p
                   className={`${
                     stat.text.length > 15 ? "max-w-[100px]" : "max-w-[150px]"
