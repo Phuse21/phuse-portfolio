@@ -10,6 +10,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
 import { BsArrowUpRight, BsGithub } from "react-icons/bs";
+import { FaFigma } from "react-icons/fa";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import Image from "next/image";
@@ -57,7 +58,6 @@ const projects = [
       "A robust robocall application built with Arkesel, enabling automated voice calls for efficient communication and notifications. Ideal for businesses and organizations looking to streamline outreach.",
     stack: [{ name: "Laravel" }, { name: "API" }],
     image: "/assets/mockup/robocall.png",
-    live: "",
     github: "https://github.com/Phuse21/RobocallsApp",
   },
 
@@ -69,8 +69,8 @@ const projects = [
       "A thoughtfully designed user interface and experience for an EMR system, focusing on intuitive navigation, streamlined workflows, and enhanced usability for healthcare professionals.",
     stack: [{ name: "Figma" }],
     image: "/assets/mockup/Emr.png",
-    live: "",
-    github: "",
+    figma:
+      "https://www.figma.com/design/Ml1ZrLoIg5Mh6H1GqOGLIj/sample?m=auto&t=egb9UqawUn21l3gF-6",
   },
 ];
 
@@ -134,35 +134,56 @@ const Work = () => {
               {/* buttons */}
 
               <div className="flex gap-4 items-center">
-                {/* live project button */}
-                <Link href={project.live}>
-                  <TooltipProvider delayDuration={100}>
-                    <Tooltip>
-                      <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
-                        <BsArrowUpRight className="text-3xl text-white group-hover:text-accent" />
-                      </TooltipTrigger>
+                {/* Live Project Button */}
+                {project.live && (
+                  <Link href={project.live}>
+                    <TooltipProvider delayDuration={100}>
+                      <Tooltip>
+                        <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
+                          <BsArrowUpRight className="text-3xl text-white group-hover:text-accent" />
+                        </TooltipTrigger>
 
-                      <TooltipContent>
-                        <p>Live Project</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                </Link>
+                        <TooltipContent>
+                          <p>Live Project</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  </Link>
+                )}
 
-                {/* github project button */}
-                <Link href={project.github}>
-                  <TooltipProvider delayDuration={100}>
-                    <Tooltip>
-                      <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
-                        <BsGithub className="text-3xl text-white group-hover:text-accent" />
-                      </TooltipTrigger>
+                {/* GitHub Repository Button */}
+                {project.github && (
+                  <Link href={project.github}>
+                    <TooltipProvider delayDuration={100}>
+                      <Tooltip>
+                        <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
+                          <BsGithub className="text-3xl text-white group-hover:text-accent" />
+                        </TooltipTrigger>
 
-                      <TooltipContent>
-                        <p>Github Repository</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                </Link>
+                        <TooltipContent>
+                          <p>GitHub Repository</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  </Link>
+                )}
+
+                {/* Figma Project Button */}
+                {project.figma && (
+                  <Link href={project.figma}>
+                    <TooltipProvider delayDuration={100}>
+                      <Tooltip>
+                        <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
+                          <FaFigma className="text-3xl text-white group-hover:text-accent" />
+                        </TooltipTrigger>
+
+                        <TooltipContent>
+                          <p>Figma Design</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  </Link>
+                )}
               </div>
             </div>
           </div>
