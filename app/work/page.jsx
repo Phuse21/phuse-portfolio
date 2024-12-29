@@ -19,6 +19,21 @@ import WorkSliderBtns from "@/components/WorkSliderBtns";
 const projects = [
   {
     num: "01",
+    category: "Frontend",
+    title: "LuxeGlam",
+    description:
+      "LuxeGlam is a frontend project focused on beauty and cosmetic treatments, offering a sleek and user-friendly platform to explore and book premium beauty services.",
+    stack: [
+      { name: "Next.js" },
+      { name: "Tailwind.css" },
+      { name: "Framer Motion" },
+    ],
+    image: "/assets/mockup/glam.png",
+    live: "https://luxe-glam.vercel.app/",
+    github: "https://github.com/Phuse21/LuxeGlam",
+  },
+  {
+    num: "02",
     category: "Fullstack",
     title: "Solestride",
     description:
@@ -35,7 +50,7 @@ const projects = [
     github: "https://github.com/Phuse21/SoleStride",
   },
   {
-    num: "02",
+    num: "03",
     category: "Fullstack",
     title: "Care Pulse",
     description:
@@ -51,7 +66,7 @@ const projects = [
     github: "https://github.com/Phuse21/CarePulse",
   },
   {
-    num: "03",
+    num: "04",
     category: "Backend",
     title: "Robocall App",
     description:
@@ -62,7 +77,7 @@ const projects = [
   },
 
   {
-    num: "04",
+    num: "05",
     category: "UI/UX",
     title: "EMR UI/UX",
     description:
@@ -136,7 +151,7 @@ const Work = () => {
               <div className="flex gap-4 items-center">
                 {/* Live Project Button */}
                 {project.live && (
-                  <Link href={project.live}>
+                  <Link href={project.live} target="_blank">
                     <TooltipProvider delayDuration={100}>
                       <Tooltip>
                         <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
@@ -153,7 +168,7 @@ const Work = () => {
 
                 {/* GitHub Repository Button */}
                 {project.github && (
-                  <Link href={project.github}>
+                  <Link href={project.github} target="_blank">
                     <TooltipProvider delayDuration={100}>
                       <Tooltip>
                         <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
