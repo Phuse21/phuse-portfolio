@@ -1,22 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useTheme } from "next-themes";
 import Image from "next/image";
-import { useEffect, useState } from "react";
 
 const Photo = () => {
-  const { theme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) return null;
-
-  const imageSrc = theme === "dark" ? "/assets/dark.png" : "/assets/light.png";
-
   return (
     <div className="w-full h-full relative">
       <motion.div
@@ -34,13 +21,24 @@ const Photo = () => {
           }}
           className="w-[310px] h-[370px] -bottom-6 xl:w-[630px] xl:h-[630px] dark:w-[298px] dark:h-[298px] dark:xl:w-[498px] dark:xl:h-[498px] dark:mix-blend-lighten mix-blend-normal absolute dark:left-1 dark:bottom-0 xl:-left-14 xl:-bottom-10"
         >
+          {/* Light Mode Image */}
           <Image
-            src={imageSrc}
-            alt="profile"
+            src="/assets/light.png"
+            alt="profile-light"
             priority
             quality={100}
             fill
-            className="object-contain"
+            className="object-contain dark:hidden"
+          />
+
+          {/* Dark Mode Image */}
+          <Image
+            src="/assets/dark.png"
+            alt="profile-dark"
+            priority
+            quality={100}
+            fill
+            className="object-contain hidden dark:block"
           />
         </motion.div>
 
