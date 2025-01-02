@@ -1,9 +1,22 @@
 "use client";
 
-import { delay, motion } from "framer-motion";
+import { motion } from "framer-motion";
+import { useTheme } from "next-themes";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 const Photo = () => {
+  const { theme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
+
+  const imageSrc = theme === "dark" ? "/assets/dark.png" : "/assets/light.png";
+
   return (
     <div className="w-full h-full relative">
       <motion.div
@@ -19,10 +32,10 @@ const Photo = () => {
             opacity: 1,
             transition: { duration: 0.4, delay: 2.4, ease: "easeInOut" },
           }}
-          className="w-[298px] h-[298px] xl:w-[498px] xl:h-[498px] dark:mix-blend-lighten mix-blend-normal absolute left-1"
+          className="w-[310px] h-[370px] -bottom-6 xl:w-[630px] xl:h-[630px] dark:w-[298px] dark:h-[298px] dark:xl:w-[498px] dark:xl:h-[498px] dark:mix-blend-lighten mix-blend-normal absolute dark:left-1 dark:bottom-0 xl:-left-10 xl:-bottom-10"
         >
           <Image
-            src="/assets/photo.png"
+            src={imageSrc}
             alt="profile"
             priority
             quality={100}
