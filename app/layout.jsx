@@ -19,6 +19,24 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        {/* Google Analytics Tag */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-8G58X3Q1M7"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-8G58X3Q1M7');
+            `,
+          }}
+        />
+      </head>
+
       <body className={jetbrainsMono.variable}>
         <ThemeProvider
           attribute="class"
