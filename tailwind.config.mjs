@@ -46,7 +46,7 @@ const tailwindConfig = {
         },
 
         accent: {
-          DEFAULT: "#008080", //#00bfff 008080 00ffff
+          DEFAULT: "#008080",
           hover: "#00cccc",
         },
       },
