@@ -219,33 +219,36 @@ const Work = () => {
           </div>
 
           {/* slider */}
-          <div className="w-full xl:w-[50%] ">
+          <div className="w-full xl:w-[50%]">
+            {/* Keyboard navigation info */}
+            <p className="text-sm text-accent mb-2">
+              Can use the arrow keys on your keyboard to navigate the slides.
+            </p>
+
             <Swiper
               spaceBetween={30}
               slidesPerView={1}
               className="x:h-[520px] mb-12"
               onSlideChange={handleSlideChange}
             >
-              {projects.map((project, index) => {
-                return (
-                  <SwiperSlide key={index}>
-                    <div className="lg:h-[460px] h-[260px] relative group flex justify-center items-center bg-pink-50/20">
-                      {/* overlay */}
-                      <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10"></div>
+              {projects.map((project, index) => (
+                <SwiperSlide key={index}>
+                  <div className="lg:h-[460px] h-[260px] relative group flex justify-center items-center bg-pink-50/20">
+                    {/* overlay */}
+                    <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10"></div>
 
-                      {/* image */}
-                      <div className="relative w-full h-full">
-                        <Image
-                          src={project.image}
-                          alt={project.title}
-                          fill
-                          className="object-cover"
-                        />
-                      </div>
+                    {/* image */}
+                    <div className="relative w-full h-full">
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        fill
+                        className="object-cover"
+                      />
                     </div>
-                  </SwiperSlide>
-                );
-              })}
+                  </div>
+                </SwiperSlide>
+              ))}
 
               {/* slider buttons */}
               <div className="relative h-[40px] xl:h-[60px]">
