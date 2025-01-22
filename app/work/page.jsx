@@ -20,6 +20,21 @@ const projects = [
   {
     num: "01",
     category: "Frontend",
+    title: "Suwari Legal LLP",
+    description:
+      "Suwari Legal LLP is a professional frontend project designed for a law firm, providing a clean and intuitive platform to showcase legal services, expertise, and client-focused solutions.",
+    stack: [
+      { name: "Next.js" },
+      { name: "Tailwind.css" },
+      { name: "Framer Motion" },
+    ],
+    image: "/assets/mockup/suwari.png",
+    live: "https://suwarillp.vercel.app/",
+    github: "https://github.com/Phuse21/suwarillp/",
+  },
+  {
+    num: "02",
+    category: "Frontend",
     title: "LuxeGlam",
     description:
       "LuxeGlam is a frontend project focused on beauty and cosmetic treatments, offering a sleek and user-friendly platform to explore and book premium beauty services.",
@@ -33,7 +48,7 @@ const projects = [
     github: "https://github.com/Phuse21/LuxeGlam",
   },
   {
-    num: "02",
+    num: "03",
     category: "Fullstack",
     title: "Solestride",
     description:
@@ -50,7 +65,7 @@ const projects = [
     github: "https://github.com/Phuse21/SoleStride",
   },
   {
-    num: "03",
+    num: "04",
     category: "Fullstack",
     title: "Care Pulse",
     description:
@@ -66,7 +81,7 @@ const projects = [
     github: "https://github.com/Phuse21/CarePulse",
   },
   {
-    num: "04",
+    num: "05",
     category: "Backend",
     title: "Robocall App",
     description:
@@ -77,7 +92,7 @@ const projects = [
   },
 
   {
-    num: "05",
+    num: "06",
     category: "UI/UX",
     title: "EMR UI/UX",
     description:
