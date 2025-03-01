@@ -49,23 +49,23 @@ const Photo = () => {
           viewBox="0 0 506 506"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <motion.circle
-            cx="253"
-            cy="253"
-            r="250"
+          <motion.rect
+            x="28"
+            y="28"
+            width="450"
+            height="450"
             stroke="#008080"
             strokeWidth="4"
             strokeLinecap="round"
             strokeLinejoin="round"
-            initial={{ strokeDasharray: "24 10 0 0" }}
+            initial={{ strokeDasharray: "20 30" }}
             animate={{
-              strokeDasharray: ["15 120 25 25", "16 25 92 72", "4 250 22 22"],
-              rotate: [120, 360],
+              strokeDasharray: ["10 40", "30 20", "50 10", "20 30"],
+              strokeDashoffset: [0, -10, -20, 0],
               transition: {
-                duration: 20,
+                duration: 6,
                 ease: "easeInOut",
                 repeat: Infinity,
-                repeatType: "reverse",
               },
             }}
           />
