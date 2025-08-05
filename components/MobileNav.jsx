@@ -1,36 +1,28 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "./ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetTitle,
+  SheetTrigger,
+  SheetClose,
+} from "./ui/sheet";
 import { CiMenuFries } from "react-icons/ci";
 import Link from "next/link";
 import { ModeToggle } from "./modeBtn";
 
 const links = [
-  {
-    name: "home",
-    path: "/",
-  },
-  {
-    name: "services",
-    path: "/services",
-  },
-  {
-    name: "resume",
-    path: "/resume",
-  },
-  {
-    name: "work",
-    path: "/work",
-  },
-  {
-    name: "contact",
-    path: "/contact",
-  },
+  { name: "home", path: "/" },
+  { name: "services", path: "/services" },
+  { name: "resume", path: "/resume" },
+  { name: "work", path: "/work" },
+  { name: "contact", path: "/contact" },
 ];
 
 const MobileNav = () => {
   const pathname = usePathname();
+
   return (
     <div className="flex gap-4 items-center justify-center">
       <ModeToggle />
@@ -40,24 +32,25 @@ const MobileNav = () => {
         </SheetTrigger>
 
         <SheetContent className="flex flex-col">
-          {/* log0 */}
+          {/* Logo */}
           <div className="mt-32 mb-40 text-center text-2xl flex justify-center">
-            <Link href="/">
-              <h1 className="text-3xl font-semibold">
-                Phuse <span className="text-accent">.</span>
-              </h1>
-            </Link>
+            <SheetClose asChild>
+              <Link href="/">
+                <h1 className="text-3xl font-semibold">
+                  Phuse <span className="text-accent">.</span>
+                </h1>
+              </Link>
+            </SheetClose>
           </div>
+
           <SheetTitle className="hidden">Mobile Navigation</SheetTitle>
 
-          {/* nav */}
-
+          {/* Navigation Links */}
           <nav className="flex flex-col justify-center items-center gap-8">
-            {links.map((link, index) => {
-              return (
+            {links.map((link, index) => (
+              <SheetClose asChild key={index}>
                 <Link
                   href={link.path}
-                  key={index}
                   className={`${
                     pathname === link.path &&
                     "text-accent border-b-2 border-accent"
@@ -65,8 +58,8 @@ const MobileNav = () => {
                 >
                   {link.name}
                 </Link>
-              );
-            })}
+              </SheetClose>
+            ))}
           </nav>
         </SheetContent>
       </Sheet>
