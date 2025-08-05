@@ -1,6 +1,15 @@
 "use client";
 
-import { FaHtml5, FaCss3, FaJs, FaPhp, FaReact, FaFigma } from "react-icons/fa";
+import {
+  FaHtml5,
+  FaCss3,
+  FaJs,
+  FaPhp,
+  FaReact,
+  FaFigma,
+  FaGulp,
+  FaMicrosoft,
+} from "react-icons/fa";
 
 import {
   SiTailwindcss,
@@ -123,6 +132,14 @@ const skills = {
     "A collection of the key skills and tools I’ve gained experience with, helping me build and deliver efficient, scalable, and user-friendly solutions.",
   skillsList: [
     {
+      name: "SharePoint",
+      icon: <FaMicrosoft />,
+    },
+    {
+      name: "Power Automate",
+      icon: <FaMicrosoft />,
+    },
+    {
       name: "Laravel",
       icon: <SiLaravel />,
     },
@@ -141,6 +158,10 @@ const skills = {
     {
       name: "HTML",
       icon: <FaHtml5 />,
+    },
+    {
+      name: "GULP",
+      icon: <FaGulp />,
     },
     {
       name: "CSS",
