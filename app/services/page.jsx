@@ -26,6 +26,13 @@ const services = [
       "I develop automated robocall systems, integrating innovative solutions like voice messaging and text-to-speech to improve communication and engagement for businesses.",
     path: "",
   },
+  {
+    num: "04",
+    title: "SharePoint Development",
+    description:
+      "I build custom solutions for Microsoft SharePoint, including SPFx web parts, to enhance organizational workflows, internal communication, and team collaboration.",
+    path: "",
+  },
 ];
 
 const Services = () => {

@@ -9,19 +9,21 @@ const Home = () => {
   return (
     <section className="h-full">
       <div className="container mx-auto h-full">
-        <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24">
+        <div className="flex flex-col xl:flex-row items-center justify-between lg:pt-4 pb-10 xl:pt-8 xl:pb-24">
           {/* Text */}
           <div className="text-center xl:text-left order-2 xl:order-none">
             <span className="text-xl">Software Developer</span>
-            <h1 className="h1 mb-6">
+            <h1 className="h2 mb-6">
               Hello I'm <br />
               <span className="text-accent">Mahfuz Abdallah</span>
             </h1>
 
-            <p className="max-w-[500px] mb-9 text-white/80">
-              I'm all about building smooth, user-friendly experiences, and I'm
-              pretty comfortable working with a range of programming languages,
-              frameworks, and tools to make it happen.
+            <p className="max-w-[500px] mb-9 lg:mb-4 text-white/80">
+              I'm passionate about creating smooth, user-friendly experiences,
+              using a wide range of programming languages, frameworks, and tools
+              to bring ideas to life. I'm also experienced in developing custom
+              solutions for SharePoint, including SPFx web parts, to enhance
+              collaboration and productivity in modern workplace environments.
             </p>
 
             {/* button and socials */}

@@ -65,13 +65,19 @@ const experience = {
 
   items: [
     {
+      company: "Multithread ICT Solutions",
+      title: "Software Engineer",
+      date: "May 2025 - Present",
+      description:
+        "Developed internal tools and solutions using Microsoft SharePoint, including custom SPFx web parts with React to enhance collaboration and productivity across teams.",
+    },
+    {
       company: "RX Health Info Systems",
       title: "Junior Developer",
       date: "October 2023 - October 2024",
       description:
         "Contributed to the development and maintenance of healthcare software solutions, collaborating with cross-functional teams to improve user experiences and streamline workflows.",
     },
-
     {
       company: "Private Contract",
       title: "Robocall Developer",
@@ -79,13 +85,12 @@ const experience = {
       description:
         "Designed and implemented automated robocall solutions, utilizing Arkesel to enhance communication systems.",
     },
-
     {
       company: "Scancom PLC (MTN Ghana)",
       title: "Tech Support (Intern)",
       date: "October 2023 - December 2024",
       description:
-        "Provided technical support to end-users, and assisting with system maintenance to ensure smooth operations.",
+        "Provided technical support to end-users, and assisted with system maintenance to ensure smooth operations.",
     },
   ],
 };
