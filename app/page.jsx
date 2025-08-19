@@ -1,3 +1,4 @@
+import { AuroraText } from "@/components/magicui/aurora-text";
 import Photo from "@/components/Photo";
 import Social from "@/components/Social";
 import Stats from "@/components/Stats";
@@ -15,7 +16,7 @@ const Home = () => {
             <span className="text-xl">Software Developer</span>
             <h1 className="h2 mb-6">
               Hello I'm <br />
-              <span className="text-accent">Mahfuz Abdallah</span>
+              <AuroraText>Mahfuz Abdallah</AuroraText>
             </h1>
 
             <p className="max-w-[500px] mb-9 lg:mb-4 text-white/80">

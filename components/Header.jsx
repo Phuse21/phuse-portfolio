@@ -3,6 +3,8 @@ import Nav from "./Nav";
 import { Button } from "./ui/button";
 import MobileNav from "./MobileNav";
 import { ModeToggle } from "./modeBtn";
+import { LineShadowText } from "./magicui/line-shadow-text";
+import Logo from "./Logo";
 
 const Header = () => {
   return (
@@ -10,9 +12,7 @@ const Header = () => {
       <div className="container mx-auto flex justify-between items-center">
         {/* log */}
         <Link href="/">
-          <h1 className="text-4xl font-semibold">
-            Phuse<span className="text-accent">.</span>
-          </h1>
+          <Logo />
         </Link>
 
         {/* desktop-nav */}

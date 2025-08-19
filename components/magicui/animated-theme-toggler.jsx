@@ -1,34 +1,19 @@
 "use client";
-
 import { Moon, SunDim } from "lucide-react";
-import { useTheme } from "next-themes";
-import { useEffect, useRef, useState } from "react";
+import { useState, useRef } from "react";
 import { flushSync } from "react-dom";
-import { Button } from "./ui/button";
+import { cn } from "@/lib/utils";
 
-export function ModeToggle({ className }) {
-  const { theme, setTheme, resolvedTheme } = useTheme();
-  const [isMounted, setIsMounted] = useState(false);
+export const AnimatedThemeToggler = ({ className }) => {
+  const [isDarkMode, setIsDarkMode] = useState(false);
   const buttonRef = useRef(null);
-
-  useEffect(() => {
-    // ✅ Prevent hydration mismatch
-    setIsMounted(true);
-  }, []);
-
-  if (!isMounted) {
-    return null;
-  }
-
   const changeTheme = async () => {
     if (!buttonRef.current) return;
 
-    // Decide next theme
-    const nextTheme = resolvedTheme === "dark" ? "light" : "dark";
-
     await document.startViewTransition(() => {
       flushSync(() => {
-        setTheme(nextTheme);
+        const dark = document.documentElement.classList.toggle("dark");
+        setIsDarkMode(dark);
       });
     }).ready;
 
@@ -55,15 +40,9 @@ export function ModeToggle({ className }) {
       }
     );
   };
-
   return (
-    <Button variant="outline" size="icon" ref={buttonRef} onClick={changeTheme}>
-      {resolvedTheme === "dark" ? (
-        <SunDim className="h-5 w-5" />
-      ) : (
-        <Moon className="h-5 w-5" />
-      )}
-      <span className="sr-only">Toggle theme</span>
-    </Button>
+    <button ref={buttonRef} onClick={changeTheme} className={cn(className)}>
+      {isDarkMode ? <SunDim /> : <Moon />}
+    </button>
   );
-}
+};
