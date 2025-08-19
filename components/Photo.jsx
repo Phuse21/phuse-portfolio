@@ -2,75 +2,85 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { OrbitingCircles } from "@/components/magicui/orbiting-circles";
+
+const ICONS = [
+  { src: "/assets/icons/nextjs.svg", alt: "Next.js" },
+  { src: "/assets/icons/laravel.svg", alt: "Laravel" },
+  { src: "/assets/icons/sharepoint.svg", alt: "SharePoint" },
+  { src: "/assets/icons/php.svg", alt: "PHP" },
+  { src: "/assets/icons/js.svg", alt: "JavaScript" },
+  { src: "/assets/icons/react.svg", alt: "React" },
+  { src: "/assets/icons/tailwind.svg", alt: "Tailwind CSS" },
+  { src: "/assets/icons/figma.svg", alt: "Figma" },
+  { src: "/assets/icons/mysql.svg", alt: "MySQL" },
+];
 
 const Photo = () => {
   return (
-    <div className="w-full h-full relative">
+    <div className="relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden">
+      {/* Profile Image */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{
           opacity: 1,
           transition: { duration: 0.4, delay: 2, ease: "easeIn" },
         }}
+        className="relative w-[310px] h-[310px] xl:w-[630px] xl:h-[630px] dark:w-[298px] dark:h-[298px] dark:xl:w-[498px] dark:xl:h-[498px]"
       >
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{
-            opacity: 1,
-            transition: { duration: 0.4, delay: 2.4, ease: "easeInOut" },
-          }}
-          className="w-[310px] h-[370px] -bottom-6 xl:w-[630px] xl:h-[630px] dark:w-[298px] dark:h-[298px] dark:xl:w-[498px] dark:xl:h-[498px] dark:mix-blend-lighten mix-blend-normal absolute dark:left-1 dark:bottom-0 xl:-left-14 xl:-bottom-10"
-        >
-          {/* Light Mode Image */}
-          <Image
-            src="/assets/light.png"
-            alt="profile-light"
-            priority
-            quality={100}
-            fill
-            className="object-contain dark:hidden"
-          />
+        {/* Light Mode Image */}
+        <Image
+          src="/assets/light.png"
+          alt="profile-light"
+          priority
+          quality={100}
+          fill
+          className="object-contain dark:hidden"
+        />
 
-          {/* Dark Mode Image */}
-          <Image
-            src="/assets/dark.png"
-            alt="profile-dark"
-            priority
-            quality={100}
-            fill
-            className="object-contain hidden dark:block"
-          />
-        </motion.div>
-
-        {/* circle */}
-        <motion.svg
-          className="w-[300px] xl:w-[506px] h-[300px] xl:h-[506px]"
-          fill="transparent"
-          viewBox="0 0 506 506"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <motion.rect
-            x="28"
-            y="28"
-            width="450"
-            height="450"
-            stroke="#008080"
-            strokeWidth="4"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            initial={{ strokeDasharray: "20 30" }}
-            animate={{
-              strokeDasharray: ["10 40", "30 20", "50 10", "20 30"],
-              strokeDashoffset: [0, -10, -20, 0],
-              transition: {
-                duration: 6,
-                ease: "easeInOut",
-                repeat: Infinity,
-              },
-            }}
-          />
-        </motion.svg>
+        {/* Dark Mode Image */}
+        <Image
+          src="/assets/dark.png"
+          alt="profile-dark"
+          priority
+          quality={100}
+          fill
+          className="object-contain hidden dark:block"
+        />
       </motion.div>
+
+      {/* Orbiting Icons (responsive radius) */}
+      <div className="absolute inset-0 flex items-center justify-center">
+        {/* Mobile orbit */}
+        <div className="block xl:hidden">
+          <OrbitingCircles iconSize={32} radius={135} centerOffsetY={-10}>
+            {ICONS.map((icon, idx) => (
+              <Image
+                key={idx}
+                src={icon.src}
+                alt={icon.alt}
+                width={32}
+                height={32}
+              />
+            ))}
+          </OrbitingCircles>
+        </div>
+
+        {/* Desktop orbit */}
+        <div className="hidden xl:block">
+          <OrbitingCircles iconSize={40} radius={215} centerOffsetY={-20}>
+            {ICONS.map((icon, idx) => (
+              <Image
+                key={idx}
+                src={icon.src}
+                alt={icon.alt}
+                width={40}
+                height={40}
+              />
+            ))}
+          </OrbitingCircles>
+        </div>
+      </div>
     </div>
   );
 };

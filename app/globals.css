@@ -6,9 +6,7 @@
   body {
     @apply font-primary;
     background-color: theme("colors.primary.light"); /* Default to light mode */
-    color: theme(
-      "colors.white.light"
-    ); /* Default text color (for light mode) */
+    color: theme("colors.white.light");
   }
 
   /* Apply dark mode colors */
@@ -40,5 +38,23 @@
 
   .shad-error {
     @apply text-red-400 text-xs !important;
+  }
+
+  /* Orbit variables (controlled globally) */
+  :root {
+    --radius: 100; /* orbit distance in px */
+    --duration: 5; /* orbit time in seconds */
+    --angle: 0;
+  }
+}
+
+@layer utilities {
+  /* Orbit utility uses keyframes from tailwind.config.js */
+  .animate-orbit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: center;
+    animation: orbit calc(var(--duration) * 1s) linear infinite;
   }
 }

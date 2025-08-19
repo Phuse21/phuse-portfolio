@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import PageTransition from "@/components/PageTransition";
 import StairTransition from "@/components/StairTransition";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import Bg from "@/components/Bg";
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -44,6 +45,7 @@ export default function RootLayout({ children }) {
           enableSystem
           disableTransitionOnChange
         >
+          <Bg />
           <Header />
           <StairTransition />
           <PageTransition>{children}</PageTransition>

@@ -30,10 +30,21 @@ const tailwindConfig = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: 0 },
         },
+        orbit: {
+          "0%": {
+            transform:
+              "translate(-50%, calc(-50% + var(--center-offset-y))) rotate(calc(var(--angle) * 1deg)) translateY(calc(var(--radius) * 1px)) rotate(calc(var(--angle) * -1deg))",
+          },
+          "100%": {
+            transform:
+              "translate(-50%, calc(-50% + var(--center-offset-y))) rotate(calc(var(--angle) * 1deg + 360deg)) translateY(calc(var(--radius) * 1px)) rotate(calc((var(--angle) * -1deg) - 360deg))",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        orbit: "orbit calc(var(--duration) * 1s) linear infinite",
       },
       colors: {
         primary: {
@@ -44,7 +55,6 @@ const tailwindConfig = {
           light: "#1c1c22",
           dark: "#ffffff",
         },
-
         accent: {
           DEFAULT: "#008080",
           hover: "#00cccc",
