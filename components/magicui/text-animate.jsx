@@ -1,6 +1,6 @@
-"use client";;
+"use client";
 import { cn } from "@/lib/utils";
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, motion } from "framer-motion";
 import { memo } from "react";
 
 const staggerTimings = {
@@ -247,7 +247,7 @@ const TextAnimateBase = ({
   animation = "fadeIn",
   ...props
 }) => {
-  const MotionComponent = motion.create(Component);
+  const MotionComponent = motion[Component] || motion.p;
 
   let segments = [];
   switch (by) {
@@ -289,30 +289,30 @@ const TextAnimateBase = ({
         item: variants,
       }
     : animation
-      ? {
-          container: {
-            ...defaultItemAnimationVariants[animation].container,
-            show: {
-              ...defaultItemAnimationVariants[animation].container.show,
-              transition: {
-                delayChildren: delay,
-                staggerChildren: duration / segments.length,
-              },
-            },
-            exit: {
-              ...defaultItemAnimationVariants[animation].container.exit,
-              transition: {
-                staggerChildren: duration / segments.length,
-                staggerDirection: -1,
-              },
+    ? {
+        container: {
+          ...defaultItemAnimationVariants[animation].container,
+          show: {
+            ...defaultItemAnimationVariants[animation].container.show,
+            transition: {
+              delayChildren: delay,
+              staggerChildren: duration / segments.length,
             },
           },
-          item: defaultItemAnimationVariants[animation].item,
-        }
-      : { container: defaultContainerVariants, item: defaultItemVariants };
+          exit: {
+            ...defaultItemAnimationVariants[animation].container.exit,
+            transition: {
+              staggerChildren: duration / segments.length,
+              staggerDirection: -1,
+            },
+          },
+        },
+        item: defaultItemAnimationVariants[animation].item,
+      }
+    : { container: defaultContainerVariants, item: defaultItemVariants };
 
   return (
-    (<AnimatePresence mode="popLayout">
+    <AnimatePresence mode="popLayout">
       <MotionComponent
         variants={finalVariants.container}
         initial="hidden"
@@ -321,7 +321,8 @@ const TextAnimateBase = ({
         exit="exit"
         className={cn("whitespace-pre-wrap", className)}
         viewport={{ once }}
-        {...props}>
+        {...props}
+      >
         {segments.map((segment, i) => (
           <motion.span
             key={`${by}-${segment}-${i}`}
@@ -331,12 +332,13 @@ const TextAnimateBase = ({
               by === "line" ? "block" : "inline-block whitespace-pre",
               by === "character" && "",
               segmentClassName
-            )}>
+            )}
+          >
             {segment}
           </motion.span>
         ))}
       </MotionComponent>
-    </AnimatePresence>)
+    </AnimatePresence>
   );
 };
 

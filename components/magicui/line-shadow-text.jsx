@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 
 export function LineShadowText({
   children,
@@ -8,7 +8,7 @@ export function LineShadowText({
   as: Component = "span",
   ...props
 }) {
-  const MotionComponent = motion.create(Component);
+  const MotionComponent = motion[Component] || motion.span;
   const content = typeof children === "string" ? children : null;
 
   if (!content) {
@@ -16,9 +16,9 @@ export function LineShadowText({
   }
 
   return (
-    (<MotionComponent
+    <MotionComponent
       style={{
-        "--shadow-color": shadowColor
+        "--shadow-color": shadowColor,
       }}
       className={cn(
         "relative z-0 inline-flex",
@@ -29,8 +29,9 @@ export function LineShadowText({
         className
       )}
       data-text={content}
-      {...props}>
+      {...props}
+    >
       {content}
-    </MotionComponent>)
+    </MotionComponent>
   );
 }
