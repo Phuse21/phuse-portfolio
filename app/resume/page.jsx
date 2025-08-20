@@ -8,7 +8,6 @@ import {
   FaReact,
   FaFigma,
   FaGulp,
-  FaMicrosoft,
 } from "react-icons/fa";
 
 import {
@@ -21,6 +20,10 @@ import {
   SiGithub,
   SiTypescript,
 } from "react-icons/si";
+
+import Image from "next/image";
+import SharePointIcon from "@/public/assets/icons/sharepoint-big.svg";
+import PowerAutomateIcon from "@/public/assets/icons/power-automate.svg";
 
 import { motion } from "framer-motion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -133,11 +136,20 @@ const skills = {
   skillsList: [
     {
       name: "SharePoint",
-      icon: <FaMicrosoft />,
+      icon: (
+        <Image src={SharePointIcon} alt="SharePoint" width={60} height={60} />
+      ),
     },
     {
       name: "Power Automate",
-      icon: <FaMicrosoft />,
+      icon: (
+        <Image
+          src={PowerAutomateIcon}
+          alt="Power Automate"
+          width={60}
+          height={60}
+        />
+      ),
     },
     {
       name: "Laravel",

@@ -13,7 +13,7 @@ const links = [
     path: "/services",
   },
   {
-    nam: "resume",
+    nam: "resumè",
     path: "/resume",
   },
   {
