@@ -1,4 +1,5 @@
 import { AuroraText } from "@/components/magicui/aurora-text";
+import { ShimmerButton } from "@/components/magicui/shimmer-button";
 import Photo from "@/components/Photo";
 import Social from "@/components/Social";
 import Stats from "@/components/Stats";
@@ -30,9 +31,9 @@ const Home = () => {
             {/* button and socials */}
             <div className="flex flex-col xl:flex-row items-center gap-8">
               <Button
-                variant="outline"
+                variant="shimmer"
                 size="lg"
-                className="upperCase flex items-center gap-2 hover:text-[#ffffff]"
+                className="upperCase flex items-center gap-2 hover:border-2"
               >
                 <Link
                   href="/assets/Resume1.pdf"
@@ -45,7 +46,6 @@ const Home = () => {
                   <FiDownload className="text-xl" />
                 </Link>
               </Button>
-
               <div className="mb-8 xl:mb-0">
                 <Social
                   containerStyles="flex gap-6"

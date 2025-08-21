@@ -45,6 +45,11 @@ const tailwindConfig = {
           "95%": { "clip-path": "inset(25% 0 35% 0)" },
           "100%": { "clip-path": "inset(30% 0 40% 0)" },
         },
+        "shimmer-slide": {
+          to: {
+            transform: "translate(calc(100cqw - 100%), 0)",
+          },
+        },
         "accordion-down": {
           from: { height: 0 },
           to: { height: "var(--radix-accordion-content-height)" },
@@ -63,6 +68,51 @@ const tailwindConfig = {
               "translate(-50%, calc(-50% + var(--center-offset-y))) rotate(calc(var(--angle) * 1deg + 360deg)) translateY(calc(var(--radius) * 1px)) rotate(calc((var(--angle) * -1deg) - 360deg))",
           },
         },
+        // Keyframes moved from globals.css
+        "line-shadow": {
+          "0%": {
+            "background-position": "0 0",
+          },
+          "100%": {
+            "background-position": "100% -100%",
+          },
+        },
+        aurora: {
+          "0%": {
+            "background-position": "0% 50%",
+            transform: "rotate(-5deg) scale(0.9)",
+          },
+          "25%": {
+            "background-position": "50% 100%",
+            transform: "rotate(5deg) scale(1.1)",
+          },
+          "50%": {
+            "background-position": "100% 50%",
+            transform: "rotate(-3deg) scale(0.95)",
+          },
+          "75%": {
+            "background-position": "50% 0%",
+            transform: "rotate(3deg) scale(1.05)",
+          },
+          "100%": {
+            "background-position": "0% 50%",
+            transform: "rotate(-5deg) scale(0.9)",
+          },
+        },
+        "spin-around": {
+          "0%": {
+            transform: "translateZ(0) rotate(0)",
+          },
+          "15%, 35%": {
+            transform: "translateZ(0) rotate(90deg)",
+          },
+          "65%, 85%": {
+            transform: "translateZ(0) rotate(270deg)",
+          },
+          "100%": {
+            transform: "translateZ(0) rotate(360deg)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -72,6 +122,12 @@ const tailwindConfig = {
           "glitch var(--after-duration) infinite linear alternate-reverse",
         "glitch-before":
           "glitch var(--before-duration) infinite linear alternate-reverse",
+        "shimmer-slide":
+          "shimmer-slide var(--speed) ease-in-out infinite alternate",
+        "spin-around": "spin-around calc(var(--speed) * 2) infinite linear",
+        // Animations for the moved keyframes
+        "line-shadow": "line-shadow 15s linear infinite",
+        aurora: "aurora 8s ease-in-out infinite alternate",
       },
       colors: {
         primary: {
