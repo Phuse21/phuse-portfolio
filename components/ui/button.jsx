@@ -44,7 +44,7 @@ const ShimmerContent = ({
     {/* spark container */}
     <div
       className={cn(
-        "-z-30 blur-[2px]",
+        "-z-30 blur-[2px] pointer-events-none",
         "absolute inset-0 overflow-visible [container-type:size]"
       )}
       style={{
@@ -58,11 +58,11 @@ const ShimmerContent = ({
         <div className="absolute -inset-full w-auto rotate-0 animate-spin-around [background:conic-gradient(from_calc(270deg-(40deg*0.5)),transparent_0,var(--shimmer-color)_40deg,transparent_40deg)] [translate:0_0]" />
       </div>
     </div>
-    {children}
+    <span className="relative z-10">{children}</span>
     {/* Highlight */}
     <div
       className={cn(
-        "absolute inset-0 size-full",
+        "absolute inset-0 size-full pointer-events-none",
         "rounded-full px-4 py-1.5 text-sm font-medium shadow-[inset_0_-8px_10px_#ffffff1f]",
         // transition
         "transform-gpu transition-all duration-300 ease-in-out",
@@ -75,7 +75,7 @@ const ShimmerContent = ({
     {/* backdrop */}
     <div
       className={cn(
-        "absolute -z-20 bg-transparent rounded-full inset-[0.05em]"
+        "absolute -z-20 bg-transparent rounded-full inset-[0.05em] pointer-events-none"
       )}
     />
   </>
@@ -89,7 +89,7 @@ const Button = React.forwardRef(
       size,
       asChild = false,
       shimmerColor = "#008080",
-      shimmerDuration = "3s",
+      shimmerDuration = "5s",
       children,
       ...props
     },
